@@ -2,13 +2,10 @@
 #include <pthread.h>
 #include <semaphore.h>
 
-// Number of iterations
 #define MAX_COUNT 20
 
-// Semaphores for synchronization
 sem_t semA, semB, semC;
 
-// Thread function for Thread A
 void* thread_A(void* arg) {
     for (int i = 1; i <= MAX_COUNT; i += 3) {
         sem_wait(&semA); // Wait for semaphore A
@@ -18,7 +15,6 @@ void* thread_A(void* arg) {
     pthread_exit(NULL);
 }
 
-// Thread function for Thread B
 void* thread_B(void* arg) {
     for (int i = 2; i <= MAX_COUNT; i += 3) {
         sem_wait(&semB); // Wait for semaphore B
@@ -28,7 +24,6 @@ void* thread_B(void* arg) {
     pthread_exit(NULL);
 }
 
-// Thread function for Thread C
 void* thread_C(void* arg) {
     for (int i = 3; i <= MAX_COUNT; i += 3) {
         sem_wait(&semC); // Wait for semaphore C
@@ -41,7 +36,6 @@ void* thread_C(void* arg) {
 int main() {
     pthread_t threadA, threadB, threadC;
 
-    // Initialize semaphores
     sem_init(&semA, 0, 1); // Start with Thread A
     sem_init(&semB, 0, 0); // Thread B waits initially
     sem_init(&semC, 0, 0); // Thread C waits initially
@@ -51,12 +45,10 @@ int main() {
     pthread_create(&threadB, NULL, thread_B, NULL);
     pthread_create(&threadC, NULL, thread_C, NULL);
 
-    // Wait for threads to complete
     pthread_join(threadA, NULL);
     pthread_join(threadB, NULL);
     pthread_join(threadC, NULL);
 
-    // Destroy semaphores
     sem_destroy(&semA);
     sem_destroy(&semB);
     sem_destroy(&semC);
