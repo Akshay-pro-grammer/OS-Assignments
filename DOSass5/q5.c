@@ -40,7 +40,6 @@ int main() {
     sem_init(&semB, 0, 0); // Thread B waits initially
     sem_init(&semC, 0, 0); // Thread C waits initially
 
-    // Create threads
     pthread_create(&threadA, NULL, thread_A, NULL);
     pthread_create(&threadB, NULL, thread_B, NULL);
     pthread_create(&threadC, NULL, thread_C, NULL);
