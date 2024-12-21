@@ -41,17 +41,14 @@ void* thread_C(void* arg) {
 int main() {
     pthread_t threadA, threadB, threadC;
 
-    // Initialize semaphores
     sem_init(&semA, 0, 1); // Start with Thread A
     sem_init(&semB, 0, 0); // Thread B waits initially
     sem_init(&semC, 0, 0); // Thread C waits initially
 
-    // Create threads
     pthread_create(&threadA, NULL, thread_A, NULL);
     pthread_create(&threadB, NULL, thread_B, NULL);
     pthread_create(&threadC, NULL, thread_C, NULL);
 
-    // Wait for threads to complete
     pthread_join(threadA, NULL);
     pthread_join(threadB, NULL);
     pthread_join(threadC, NULL);
