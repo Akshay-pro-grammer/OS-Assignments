@@ -9,7 +9,7 @@ int main() {
             printf("Child process with PID: %d\n", getpid());
         }
     } else {
-    	wait(NULL);
+    	// wait(NULL);
         while (1) {
             printf("Parent process with PID: %d\n", getpid());
         }
