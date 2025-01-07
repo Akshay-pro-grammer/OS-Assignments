@@ -4,7 +4,7 @@ if [ -z "$y" ]
 then
 y=$(date +"%Y")
 fi
-if [ $((y%100)) -eq 0 ] || [ $((y%4)) -eq 0 ] && [ $((y%100)) -ne 0 ]
+if [ $((y%400)) -eq 0 ] || [ $((y%4)) -eq 0 ] && [ $((y%100)) -ne 0 ]
 	then
 		echo "$y is a leap year"
 	else 
