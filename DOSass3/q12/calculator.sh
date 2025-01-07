@@ -35,5 +35,4 @@ case "$operator" in
         exit 1
         ;;
 esac
-# Display the result
 echo "$op1 $operator $op2 = $result"
