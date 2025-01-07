@@ -1,7 +1,4 @@
-echo "Filename : dtcal"
-line=$(wc dtcal.sh | wc -l)
-word=$(wc dtcal.sh | wc -w)
-char=$(wc dtcal.sh| wc -m)
-echo "Line Count: $line"
-echo "Word Count: $word"
-echo "Charcout : $char"
+echo "Filename: dtcal"
+echo "Linecount: $(wc -l < dtcal.sh)"
+echo "wordcount: $(wc -w < dtcal.sh)"
+echo "charcount: $(wc -c < dtcal.sh)"
