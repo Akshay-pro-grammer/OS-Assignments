@@ -8,12 +8,6 @@ fi
 op1=$1
 operator=$2
 op2=$3
-# Check if the first and third arguments are numbers
-if ! [[ "$op1" =~ ^-?[0-9]+(\.[0-9]+)?$ ]] || ! [[ "$op2" =~ ^-?[0-9]+(\.[0-9]+)?$ ]]; then
-    echo "Invalid input"
-    echo "Enter input in the following format: op1 operator op2"
-    exit 1
-fi
 # Perform the arithmetic operation based on the operator
 case "$operator" in
     +)

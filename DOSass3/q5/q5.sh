@@ -2,10 +2,10 @@ echo "enter the cost price"
 read cp
 echo "enter the selling price"
 read sp
-diff=$(echo "$sp-$cp" | bc)
-if [ $diff -lt 0 ]
+difference=$(echo "$sp-$cp" | bc)
+if [ $difference -lt 0 ]
 then 
-echo "loss of $diff"
+echo "loss of $difference"
 else
-echo "profit of $diff"
+echo "profit of $difference"
 fi

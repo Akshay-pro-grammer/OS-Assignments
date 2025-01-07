@@ -2,13 +2,13 @@ echo "enter three numbers"
 read a
 read b
 read c
-max=$a
-if [ $b -gt $max ]
+small=$a
+if [ $b -lt $small ]
 then 
-max=$b
+small=$b
 fi
-if [ $c -gt $max ]
+if [ $c -lt $small ]
 then
-max=$c
+small=$c
 fi
-echo "Max out of the three is: $max"
+echo "small out of the three is: $small"

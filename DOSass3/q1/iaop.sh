@@ -2,11 +2,11 @@ echo "Enter the number 1"
 read a
 echo "Enter the number 2"
 read b
-add=$(($a+$b))
+add=$((a+b))
 echo "addition is : $add"
-sub=$(($a-$b))
+sub=$((a-b))
 echo "subtraction is : $sub"
-mul=$(($a*$b))
+mul=$((a*b))
 echo "Multiplication is : $mul"
-div=$(($a/$b))
+div=$((a/b))
 echo "Division is : $div"
