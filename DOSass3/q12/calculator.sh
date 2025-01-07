@@ -1,14 +1,11 @@
-# Check if exactly three arguments are provided
 if [ "$#" -ne 3 ]; then
     echo "Invalid input"
     echo "Enter input in the following format: op1 operator op2"
     exit 1
 fi
-# Assign command-line arguments to variables for readability
 op1=$1
 operator=$2
 op2=$3
-# Perform the arithmetic operation based on the operator
 case "$operator" in
     +)
         result=$(echo "$op1 + $op2" | bc)
